@@ -1,0 +1,31 @@
+applicationSet:
+  replicas: 1
+crds:
+  install: true
+  keep: true
+dex:
+  enabled: false
+fullnameOverride: argo-cd
+notifications:
+  enabled: false
+redis-ha:
+  enabled: false
+repoServer:
+  name: repo-server
+  replicas: 1
+server:
+  service:
+    type: LoadBalancer
+    servicePortHttp: 8080
+    servicePortHttps: 8443
+  # ingress:
+  #   enabled: true
+  #   hosts:
+  #   - argocd.com
+  #   ingressClassName: traefik
+  name: server
+  replicas: 1
+  serviceAccount:
+    automountServiceAccountToken: true
+    create: true
+    name: argo-service-account

@@ -1,0 +1,4 @@
+grafana:
+  ingress:
+    enabled: true
+    ingressClassName: traefik
